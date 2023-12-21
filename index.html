@@ -3,49 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Docker Table</title>
+    <title>HP Docker Posts</title>
     <style>
         /* Optional: Add some basic styling */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        p {
-            margin: 0;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
-        hr {
-            margin-top: 10px;
-            margin-bottom: 10px;
+        li {
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            padding: 10px;
+        }
+        strong {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
 
-    <?php
+    <h1>HP Docker Posts</h1>
 
-    $connect = mysqli_connect(
-        'db', # service name
-        'php_docker', # username
-        'password', # password
-        'php_docker' # db table
-    );
-
-    $table_name = "php_docker_table";
-
-    $query = "SELECT * FROM $table_name";
-
-    $response = mysqli_query($connect, $query);
-
-    echo "<strong>$table_name: </strong>";
-    while($i = mysqli_fetch_assoc($response))
-    {
-        echo "<p><strong>Title:</strong> ".$i['title']."</p>";
-        echo "<p><strong>Body:</strong> ".$i['body']."</p>";
-        echo "<p><strong>Date Created:</strong> ".$i['date_created']."</p>";
-        echo "<hr>";
-    }
-
-    ?>
+    <ul>
+        <li>
+            <strong>2023-12-01:</strong> First Post<br>
+            First Post Message
+        </li>
+        <li>
+            <strong>2023-12-08:</strong> Second Post<br>
+            Second Blog Post Message
+        </li>
+        <li>
+            <strong>2023-12-19:</strong> Blog Post<br>
+            Body of the Blog Post
+        </li>
+        <li>
+            <strong>2023-12-11:</strong> Title1<br>
+            Description1
+        </li>
+        <li>
+            <strong>2023-12-04:</strong> Title2<br>
+            Desc2
+        </li>
+    </ul>
 
 </body>
 </html>
+
